@@ -56,7 +56,7 @@ function Cart({ isOnShopPage }) {
           <button id="payment-btn">Proceed to Pay</button>
         </Link>
       ) : (
-        <Link to="/">
+        <Link to="/shop">
           <button id="shop-btn">Continue Shopping</button>
         </Link>
       )}
