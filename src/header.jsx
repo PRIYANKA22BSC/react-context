@@ -7,10 +7,11 @@ export default function Header(){
     return(
 <div id="navbar">
 <div id="logo-div">
-    <Link to='/shop' id="logo">Logo</Link>
+    <Link to='' id="logo">Logo</Link>
     </div>
 <div id='nav-links-div'>
-  
+    <NavLink to='/' className={({isActive})=>(isActive ? "active-link" : "inactive-link")}>
+        Home</NavLink>
         <NavLink to='/shop' className={({isActive})=>(isActive ? "active-link" : "inactive-link")}>
         Shop</NavLink>
         <NavLink to='/service' className={({isActive})=>(isActive ? "active-link" : "inactive-link")}>
