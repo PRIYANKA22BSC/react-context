@@ -27,7 +27,6 @@ export default function Payment() {
               type="date"
               placeholder="Enter card number"
               className="input"
-             
               required
             />
           </label>
@@ -37,11 +36,9 @@ export default function Payment() {
               type="text"
               placeholder="Enter cvv number"
               className="input"
-            
               required
             />
           </label>
-        
           <button id="submit-btn">Submit</button>
         </form>
         <Cart isOnShopPage={false} />

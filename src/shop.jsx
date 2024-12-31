@@ -7,10 +7,27 @@ import { useCart } from './CartContext.jsx';
 export default function Shop() {
   const { cartItems, setCartItems } = useCart();
 
-  const addToCart = (item) => {
-    setCartItems((prevItems) => [...prevItems, { ...item, qty: 1 }]);
-  };
+ const addToCart = (item) => {
+   /* setCartItems((prevItems) => [...prevItems, { ...item, qty: 1 }]);*/
+   setCartItems((prevItems) => {
+      
+    const existItem = prevItems.find((cartItem) => cartItem.id === item.id);
 
+    if (existItem) {
+      return prevItems.map((cartItem) =>
+        cartItem.id === item.id
+          ? { ...cartItem, qty: cartItem.qty + 1 } 
+          : cartItem
+      );
+    } else {
+     
+      return [...prevItems, { ...item, qty: 1 }];
+    }
+   });
+
+
+
+  };
   let items = [
     { id: '1', name: 'Knee-Hi', price: '400', img: 'image/1.jpg' },
     { id: '2', name: 'Casual Sneakers', price: '399', img: 'image/2.jpg' },
